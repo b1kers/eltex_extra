@@ -16,7 +16,7 @@ sa.sa_handler = term_handler;
 sigaction(SIGTERM, &sa, 0);
 printf("My pid is %i\n", getpid());
 printf("Waiting...\n");
-sigwait(&newset, SIGALRM);
+sigwait(&newset, (int *)SIGALRM);
 while(1) sleep(1);
 return EXIT_FAILURE;
 }
