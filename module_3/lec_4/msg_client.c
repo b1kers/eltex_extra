@@ -6,7 +6,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
-#define SERVER_KEY_PATHNAME "/tmp/mqueue_server_key"
+#define SERVER_KEY_PATHNAME "mqueue_server_key"
 #define PROJECT_ID 'M'
 
 struct message_text {

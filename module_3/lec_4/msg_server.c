@@ -6,7 +6,7 @@
 #include <sys/ipc.h>
 #include <sys/msg.h>
 
-#define SERVER_KEY_PATHNAME "/tmp/mqueue_server_key"
+#define SERVER_KEY_PATHNAME "mqueue_server_key"
 #define PROJECT_ID 'M'
 #define QUEUE_PERMISSIONS 0660
 
@@ -49,7 +49,7 @@ int main (int argc, char **argv)
         printf ("Server: message received.\n");
 
         // process message
-        int length = strlen (message.msg_last.buf);
+        int length = strlen (message.message_text.buf);
         char buf [20];
         sprintf (buf, " %d", length);
         strcat (message.message_text.buf, buf);
